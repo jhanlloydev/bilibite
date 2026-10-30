@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bili-Bite - Choose Role</title>
+    <link rel="stylesheet" href="role.css">
+</head>
+
+<body>
+
+    <div class="role-container">
+
+        <div class="logo">
+            <h1>Bili-Bite</h1>
+            <p>Local Food Marketplace</p>
+        </div>
+
+        <div class="role-box">
+
+            <h2>Welcome to Bili-Bite!</h2>
+
+            <p class="question">
+                Are you a buyer or a seller?
+            </p>
+
+            <div class="role-options">
+
+                <!-- Buyer -->
+                <div class="role-card" onclick="goToBuyer()">
+                    <div class="icon">🛒</div>
+
+                    <h3>Buyer</h3>
+
+                    <p>
+                        Browse local food businesses
+                        and find products you want to buy.
+                    </p>
+
+                    <button>Continue as Buyer</button>
+                </div>
+
+
+                <!-- Seller -->
+            <div class="role-card" onclick="goToSeller()">
+                <div class="icon">🏪</div>
+
+                <h3>Seller</h3>
+
+    <p>
+        Post your food products and
+        let customers discover your business.
+    </p>
+
+    <button type="button">
+        Continue as Seller
+    </button>
+</div>
+
+
+    <script>
+
+        // Go to buyer dashboard
+        function goToBuyer() {
+            window.location.href = "index.html";
+        }
+
+
+        // Go to seller dashboard
+        function goToSeller() {
+            window.location.href = "seller-info.html";
+        }
+
+    </script>
+
+</body>
+</html>

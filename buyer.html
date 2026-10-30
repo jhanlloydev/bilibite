@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bili-Bite</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="buyer.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🍽️ Bili-Bite</h1>
+
+        <nav>
+    <a href="role.html">Home</a>
+    <a href="#">About</a>
+    
+</nav>
+    </header>
+
+
+    <!-- ===== MAIN PAGE ===== -->
+    <div id="mainView">
+
+        <section class="hero">
+            <p class="hero-greeting">Welcome, <span id="clientName"></span>! 👋</p>
+            <h2>Find Local Food Businesses</h2>
+            <p class="hero-sub">Discover food products from local sellers in your barangay.</p>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Hanapin ang food, seller o lugar...">
+                <button id="searchButton" type="button">Search</button>
+            </div>
+
+            <div class="filters">
+                <label for="locationFilter">📍 Lugar:</label>
+                <select id="locationFilter">
+                    <option value="">Lahat ng lugar</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <div class="section-title">
+                <h2>Available Foods</h2>
+                <span class="count-pill" id="resultCount"></span>
+            </div>
+
+            <div class="product-list" id="foodList">
+                <!-- Products from sellers appear here -->
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- ===== SELLER PAGE ===== -->
+    <div id="sellerView" hidden>
+
+        <section class="seller-header">
+            <button id="backButton" class="back-button" type="button">← Back</button>
+
+            <div class="seller-avatar" id="sellerAvatar"></div>
+            <h2 id="sellerTitle"></h2>
+
+            <a id="mapLink" class="map-link" target="_blank" rel="noopener" hidden>
+                📍 <span id="sellerLocationText"></span>
+            </a>
+
+            <p class="seller-label">Makipag-ugnayan sa seller</p>
+
+            <div class="message-buttons">
+                <a id="messengerLink" class="messenger-button" target="_blank" rel="noopener">Facebook</a>
+                <a id="whatsappLink" class="whatsapp-button" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+
+            <p id="noContactMessage" class="no-contact" hidden>
+                Walang contact info ang seller na ito.
+            </p>
+
+            <div id="deliveryInfo" class="delivery-info" hidden>
+                <p class="seller-label">Available na Delivery Method</p>
+                <div id="deliveryList"></div>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <div class="section-title">
+                <h2>Mga Binebenta</h2>
+            </div>
+
+            <div class="product-list" id="sellerProductList">
+                <!-- Products ng seller na ito -->
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-brand">🍽️ Bili-Bite</p>
+        <p>© 2026 Bili-Bite · Local Food Marketplace</p>
+    </footer>
+
+    <script type="module" src="buyer.js"></script>
+
+</body>
+</html>

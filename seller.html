@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bili-Bite - Seller Dashboard</title>
+
+    <link rel="stylesheet" href="seller.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Bili-Bite</h1>
+
+        <nav>
+            <a href="role.html">Home</a>
+            <a href="seller.html">My Products</a>
+        </nav>
+    </header>
+
+
+    <!-- Seller Dashboard -->
+    <section class="dashboard">
+
+        <h2>My Products</h2>
+
+        <p class="welcome">
+            Welcome, <span id="sellerName"></span>!
+        </p>
+
+        <div class="dashboard-buttons">
+            <button id="addFoodButton" class="add-food-button">
+                + Add Food
+            </button>
+
+            <button id="editProfileButton" class="edit-profile-button" type="button">
+                ✏️ Edit Profile Details
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- Add Food Form (nakatago hanggang pindutin ang + Add Food) -->
+    <section class="add-product" id="addProductSection">
+
+        <h2>Add Food</h2>
+
+        <form id="productForm">
+
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" placeholder="Enter product name" required>
+
+            <label for="productDescription">Description</label>
+            <textarea id="productDescription" placeholder="Enter product description" required></textarea>
+
+            <label for="productPrice">Price</label>
+            <input type="number" id="productPrice" placeholder="Enter price" min="1" required>
+
+            <label for="productAvailable">Availability</label>
+            <select id="productAvailable">
+                <option value="true">Available</option>
+                <option value="false">Not Available</option>
+            </select>
+
+            <label for="productImage">Product Image</label>
+            <input type="file" id="productImage" accept="image/*" required>
+
+            <div class="form-buttons">
+                <button type="submit" class="save-button">Add Product</button>
+                <button type="button" id="cancelButton" class="cancel-button">Cancel</button>
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- My Products -->
+    <section class="products">
+
+        <h2>My Products</h2>
+
+        <div class="product-list" id="productList">
+            <!-- Products appear here (galing sa seller.js) -->
+        </div>
+
+    </section>
+
+
+    <!-- ===== Edit Profile Modal ===== -->
+    <div id="profileModal" class="modal" hidden>
+        <div class="modal-content">
+
+            <button type="button" class="modal-close" id="closeProfileModal" aria-label="Close">&times;</button>
+
+            <h3>Edit Profile Details</h3>
+
+            <form id="profileForm">
+
+                <label for="editName">Pangalan / Business Name</label>
+                <input type="text" id="editName" maxlength="40" placeholder="Pangalan ng store mo" required>
+
+                <label for="editFacebook">Facebook Page Link</label>
+                <input type="url" id="editFacebook" placeholder="https://facebook.com/yourpage" required>
+
+                <label for="editMobile">WhatsApp / Mobile Number</label>
+                <input
+                    type="tel"
+                    id="editMobile"
+                    placeholder="09XXXXXXXXX"
+                    pattern="09[0-9]{9}"
+                    maxlength="11"
+                    required
+                >
+
+                <label for="editLocation">Location (Barangay / Lugar)</label>
+                <input
+                    type="text"
+                    id="editLocation"
+                    maxlength="100"
+                    placeholder="hal. Brgy. San Isidro, Cainta, Rizal"
+                    required
+                >
+
+                <label>Delivery Method (pumili ng isa o higit pa)</label>
+                <div class="delivery-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="editDelivery" value="lalamove"> 🛵 Lalamove
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="editDelivery" value="pickup"> 🏪 Pickup
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="editDelivery" value="meetup"> 🤝 Meetup
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="editDelivery" value="seller"> 🚚 Deliver by Seller
+                    </label>
+                </div>
+
+                <p id="profileMessage" class="profile-message"></p>
+
+                <div class="form-buttons">
+                    <button type="submit" id="saveProfileButton" class="save-button">Save Changes</button>
+                    <button type="button" id="cancelProfileButton" class="cancel-button">Cancel</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Bili-Bite</p>
+        <p>Seller Dashboard</p>
+    </footer>
+
+    <script type="module" src="seller.js"></script>
+
+</body>
+</html>

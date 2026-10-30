@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Information - Bili-Bite</title>
+    <link rel="stylesheet" href="seller-info.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Bili-Bite</h1>
+        <h2>Seller Contact Information</h2>
+        <p>Please provide your contact details to continue.</p>
+
+        <form id="sellerInfoForm">
+
+            <label for="facebookLink">Facebook Page Link</label>
+            <input
+                type="url"
+                id="facebookLink"
+                placeholder="https://facebook.com/yourpage"
+                required
+            >
+
+            <label for="mobileNumber">Mobile Number</label>
+            <input
+                type="tel"
+                id="mobileNumber"
+                placeholder="09XXXXXXXXX"
+                pattern="09[0-9]{9}"
+                maxlength="11"
+                required
+            >
+
+            <label>Delivery Method (pumili ng isa o higit pa)</label>
+            <div class="delivery-options">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="deliveryMethod" value="lalamove"> Lalamove
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="deliveryMethod" value="pickup"> Pickup
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="deliveryMethod" value="meetup"> Meetup
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="deliveryMethod" value="seller"> Deliver by Seller
+                </label>
+            </div>
+
+            <p id="message"></p>
+
+            <button type="submit" id="saveBtn">
+                Save and Continue
+            </button>
+        </form>
+    </div>
+
+    <script type="module" src="seller-info.js"></script>
+</body>
+</html>
